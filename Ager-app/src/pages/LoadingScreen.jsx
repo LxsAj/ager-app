@@ -1,33 +1,33 @@
-import { useEffect } from "react";
+import React, { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 
-function LoadingScreen() {
+const LoadingScreen = () => {
   const navigate = useNavigate();
 
   useEffect(() => {
-    const timer = setTimeout(() => {
+    const timeout = setTimeout(() => {
       navigate("/login");
     }, 2000);
-    return () => clearTimeout(timer);
+
+    return () => clearTimeout(timeout);
   }, [navigate]);
 
   return (
-    <div className="w-full h-screen flex items-center justify-center bg-gradient-to-r from-[#00b257] to-[#7ed957]">
-      <div className="flex flex-col items-center">
-        {/* Logo */}
-        <img
-          src="/logo.png"
-          alt="AGER Logo"
-          className="w-32 h-32 mb-4 animate-bounce"
-        />
-        {/* App Name */}
-        <h1 className="text-4xl font-extrabold text-white tracking-widest mb-2">AGER</h1>
-        <p className="text-white text-lg font-semibold">Loading AGER...</p>
-      </div>
+    <div className="h-screen w-screen bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 flex items-center justify-center flex-col text-center animate-fade-in">
+      <img
+        src="/logo.png"
+        alt="App Logo"
+        className="w-24 md:w-32 mb-4 animate-bounce"
+      />
+      <h1 className="text-white text-3xl md:text-5xl font-bold tracking-wide mb-2">
+        MyApp
+      </h1>
+      <p className="text-white text-sm md:text-base opacity-80">
+        Getting things ready...
+      </p>
     </div>
   );
-}
+};
 
 export default LoadingScreen;
-
 

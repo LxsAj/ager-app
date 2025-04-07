@@ -18,7 +18,7 @@ function LoginScreen() {
     setError("");
     setLoading(true);
 
-    // Fake loading delay (simulate API)
+    // Simulate loading
     setTimeout(() => {
       setLoading(false);
       navigate("/dashboard");
@@ -51,7 +51,6 @@ function LoginScreen() {
         </p>
       )}
 
-      {/* Remember Me + Forgot Password */}
       <div className="flex justify-between items-center w-full max-w-sm mb-4 text-sm text-gray-600">
         <label className="flex items-center gap-2">
           <input
@@ -66,7 +65,6 @@ function LoginScreen() {
         </a>
       </div>
 
-      {/* Login Button */}
       <button
         onClick={handleLogin}
         className="bg-green-600 hover:bg-green-700 text-white px-6 py-2 rounded-lg font-semibold transition duration-200 ease-in-out hover:scale-105 disabled:opacity-50"
@@ -75,7 +73,6 @@ function LoginScreen() {
         {loading ? "Logging in..." : "Login"}
       </button>
 
-      {/* Optional Spinner */}
       {loading && (
         <div className="mt-4">
           <div className="w-6 h-6 border-4 border-green-600 border-t-transparent rounded-full animate-spin"></div>
