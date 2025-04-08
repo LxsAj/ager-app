@@ -19,6 +19,8 @@ const LoadingScreen = () => {
         alt="App Logo"
         className="w-24 md:w-32 mb-4 animate-bounce"
       />
+      <h1>A G E R</h1>
+
       <h1 className="text-white text-3xl md:text-5xl font-bold tracking-wide mb-2">
         MyApp
       </h1>
