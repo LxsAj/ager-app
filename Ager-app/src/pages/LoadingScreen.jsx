@@ -1,33 +1,28 @@
-import React, { useEffect } from "react";
+import { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
+import "../index.css"; // or App.css
+import logo from "../assets/logo.png"; // Your centered white plant logo
+// Also place background image in public folder if using /your-background.png
 
-const LoadingScreen = () => {
+function LoadingScreen() {
   const navigate = useNavigate();
 
   useEffect(() => {
-    const timeout = setTimeout(() => {
+    const timer = setTimeout(() => {
       navigate("/login");
     }, 2000);
-
-    return () => clearTimeout(timeout);
+    return () => clearTimeout(timer);
   }, [navigate]);
 
   return (
-    <div className="h-screen w-screen bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 flex items-center justify-center flex-col text-center animate-fade-in">
-      <img
-        src="/logo.png"
-        alt="App Logo"
-        className="w-24 md:w-32 mb-4 animate-bounce"
-      />
-      <h1 className="text-white text-3xl md:text-5xl font-bold tracking-wide mb-2">
-        MyApp
-      </h1>
-      <p className="text-white text-sm md:text-base opacity-80">
-        Getting things ready...
-      </p>
+    <div className="splash-screen animate-fade-in">
+      <img src={logo} alt="AGER Logo" className="splash-logo" />
+      <h1 className="splash-title">AGER</h1>
+      <p className="splash-subtitle">Loading AGER...</p>
     </div>
   );
-};
+}
 
 export default LoadingScreen;
+
 
