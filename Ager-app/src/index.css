@@ -11,30 +11,47 @@
       0% 50%
     );
   }
-  /* Splash screen layout */
-.splash-screen {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  height: 100vh;
-  background: linear-gradient(to right, #00C853, #AEEA00); /* green gradient */
-  color: white;
-}
+  .splash-screen {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;  /* vertical center */
+    align-items: center;      /* horizontal center */
+    height: 100vh;
+    width: 100vw;
+    background-image: url('/green-background.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    color: white;
+    text-align: center;
+  }
+  
 
 /* Logo image */
 .splash-logo {
   width: 120px;
   height: auto;
   margin-bottom: 20px;
+
+  animation: bounce 1.5s infinite;
 }
 
-/* AGER text */
+/* AGER Title */
 .splash-title {
   font-size: 2rem;
   font-weight: bold;
   letter-spacing: 2px;
+  margin-bottom: 10px;
 }
+
+/* Optional loading text */
+.splash-subtitle {
+  font-size: 1.2rem;
+  font-weight: 500;
+  opacity: 0.9;
+}
+
+/* Fade-in Animation */
 @keyframes fade-in {
   from {
     opacity: 0;
@@ -50,4 +67,12 @@
   animation: fade-in 1s ease-out both;
 }
 
-  
+/* Bounce Animation */
+@keyframes bounce {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}

@@ -1,15 +1,16 @@
-import React, { useEffect } from "react";
+import { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
+import "../index.css";
+import logo from "../assets/logo.png";
 
-const LoadingScreen = () => {
+function LoadingScreen() {
   const navigate = useNavigate();
 
   useEffect(() => {
-    const timeout = setTimeout(() => {
+    const timer = setTimeout(() => {
       navigate("/login");
     }, 2000);
-
-    return () => clearTimeout(timeout);
+    return () => clearTimeout(timer);
   }, [navigate]);
 
   return (
@@ -19,8 +20,6 @@ const LoadingScreen = () => {
         alt="App Logo"
         className="w-24 md:w-32 mb-4 animate-bounce"
       />
-      <h1>A G E R</h1>
-
       <h1 className="text-white text-3xl md:text-5xl font-bold tracking-wide mb-2">
         MyApp
       </h1>
@@ -29,7 +28,9 @@ const LoadingScreen = () => {
       </p>
     </div>
   );
-};
+}
 
 export default LoadingScreen;
+
+
 
