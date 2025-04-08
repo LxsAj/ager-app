@@ -1,8 +1,7 @@
 import { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
-import "../index.css"; // or App.css
-import logo from "../assets/logo.png"; // Your centered white plant logo
-// Also place background image in public folder if using /your-background.png
+import "../index.css";
+import logo from "../assets/logo.png";
 
 function LoadingScreen() {
   const navigate = useNavigate();
@@ -24,5 +23,6 @@ function LoadingScreen() {
 }
 
 export default LoadingScreen;
+
 
 
